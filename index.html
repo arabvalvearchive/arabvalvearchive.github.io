@@ -2,10 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>h5ai test suite</title>
+    <title>File Archive</title>
     <link rel="stylesheet" href="h5ai-styles.css">
 </head>
 <body>
-    <script src="index.js"></script>
+    <h1>File Archive</h1>
+    <ul id="file-list"></ul>
+
+    <script>
+        const files = ["file1.pdf", "file2.jpg", "file3.zip"];  // List your files here
+
+        const fileListElement = document.getElementById('file-list');
+        files.forEach(file => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = `files/${file}`;
+            link.textContent = file;
+            listItem.appendChild(link);
+            fileListElement.appendChild(listItem);
+        });
+    </script>
 </body>
 </html>
